@@ -108,6 +108,8 @@ public class homework2 {
     private static int[] shiftArray(int[] arr, int shift) {
         if(shift == 0)
             return arr;
+        if(arr.length < 2)
+            return arr;
         if(shift % arr.length == 0)
             return arr;
 
@@ -130,6 +132,8 @@ public class homework2 {
     // Этот метод реализован для больших массивов в попытке оптимизировать сдвиг.
     private static int[] shiftBigArray(int[] arr, int shift) {
         if(shift == 0)
+            return arr;
+        if(arr.length < 2)
             return arr;
         if(shift % arr.length == 0)
             return arr;
