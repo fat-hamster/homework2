@@ -67,6 +67,7 @@ public class homework2 {
         System.out.println("Задание #6");
         int[] arr5 = {3, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         System.out.println(checkBalance(arr5));
+        System.out.println();
 
         // Задание #7
         int[] arr6 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -85,9 +86,11 @@ public class homework2 {
             return false; // потому что не получится суммы правой и левой половины массива
         int leftSum = 0;
         int rightSum = 0;
+        int leftIdx = 1;
+        int rightIdx = arr.length - 2;
 
-        leftSum = arr[0] + arr[1];
-        rightSum = arr[arr.length - 2] + arr[arr.length - 1];
+        leftSum = arr[leftIdx - 1] + arr[leftIdx];
+        rightSum = arr[rightIdx] + arr[rightIdx + 1];
         if(arr.length == 4) {
             if (leftSum == rightSum)
                 return true;
@@ -95,8 +98,14 @@ public class homework2 {
                 return false;
         }
 
-        
-
+        while (leftIdx + 1 != rightIdx) {
+            if(leftSum < rightSum)
+                leftSum += arr[++leftIdx];
+            else if (rightSum < leftSum)
+                rightSum += arr[--rightIdx];
+        }
+        if(leftSum == rightSum)
+            return true;
         return false;
     }
 
