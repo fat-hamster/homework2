@@ -13,11 +13,8 @@ public class homework2 {
 
         // Задание #2
         int[] arr2 = new int[8];
-        int val = 0;
-        for (int i = 0; i < arr2.length; i++) {
-            arr2[i] = val;
-            val+=3;
-        }
+        for (int i = 0; i < arr2.length; i++)
+            arr2[i] = i*3;
         System.out.printf("Задание #2%n%s%n%n", Arrays.toString(arr2));
 
         //Задание #3
