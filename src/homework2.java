@@ -60,6 +60,7 @@ public class homework2 {
             if (j < min)
                 min = j;
         }
+
         System.out.printf("Минимальное значение в массиве: %d%n", min);
         System.out.printf("Максимальное значение в массиве: %d%n%n", max);
 
@@ -84,18 +85,15 @@ public class homework2 {
     private static boolean checkBalance(int[] arr) {
         if(arr.length < 4)
             return false; // потому что не получится суммы правой и левой половины массива
-        int leftSum = 0;
-        int rightSum = 0;
+        int leftSum;
+        int rightSum;
         int leftIdx = 1;
         int rightIdx = arr.length - 2;
 
         leftSum = arr[leftIdx - 1] + arr[leftIdx];
         rightSum = arr[rightIdx] + arr[rightIdx + 1];
         if(arr.length == 4) {
-            if (leftSum == rightSum)
-                return true;
-            else
-                return false;
+            return leftSum == rightSum;
         }
 
         while (leftIdx + 1 != rightIdx) {
@@ -104,9 +102,7 @@ public class homework2 {
             else if (rightSum < leftSum)
                 rightSum += arr[--rightIdx];
         }
-        if(leftSum == rightSum)
-            return true;
-        return false;
+        return leftSum == rightSum;
     }
 
     private static int[] shiftArray(int[] arr, int shift) {
