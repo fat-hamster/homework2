@@ -51,7 +51,7 @@ public class homework2 {
         System.out.printf("Исходный массив%n%s%n", Arrays.toString(arr4));
         int min = arr4[0];  // Присваиваю первый элемент массива
         int max = arr4[0];  // так как пофиг какой :)
-        for (int j : arr4) {
+        for (int j : arr4) { // не знаю как упротить конструкцию
             if (j > max)
                 max = j;
             if (j < min)
@@ -63,7 +63,8 @@ public class homework2 {
 
         // Задание #6
         System.out.println("Задание #6");
-        int[] arr5 = {3, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] arr5 = {3, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // этот массив вернет true
+        //int[] arr5 = {1, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // этот вернет false
         System.out.println(checkBalance(arr5));
         System.out.println();
 
@@ -73,10 +74,10 @@ public class homework2 {
         System.out.println("Исходный сассив");
         System.out.println(Arrays.toString(arr6));
         System.out.println("Массив после сдвига");
-        if(arr6.length < 100)
+        if(arr6.length < 100) // Понятно что при этих исходных данных это уловие всегда true
             System.out.println(Arrays.toString(shiftArray(arr6, 7)));
         else
-            System.out.println(Arrays.toString(shiftBigArray(arr6, 7)));
+            System.out.println(Arrays.toString(shiftBigArray(arr6, 7))); // но этот метод тоже работает ))
     }
 
     private static boolean checkBalance(int[] arr) {
@@ -113,7 +114,7 @@ public class homework2 {
         int sh = shift % arr.length;
 
         if(shift < 0)
-           sh = arr.length - Math.abs(sh);
+           sh = arr.length - Math.abs(sh); // для простоты будем сдвигать только в правую сторону
 
         for (int i = 0; i < sh; i++) {
             int last = arr[arr.length - 1];
