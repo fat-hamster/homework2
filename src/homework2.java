@@ -28,9 +28,11 @@ public class homework2 {
         System.out.printf("Измененный массив%n%s%n%n", Arrays.toString(arr3));
 
         // Задание #4
-        int[][] square = new int[3][3];
-        for (int i = 0; i < square.length; i++)
+        int[][] square = new int[9][9];
+        for (int i = 0; i < square.length; i++) {
             square[i][i] = 1;
+            square[i][square.length - i - 1] = 1;
+        }
         System.out.println("Задание #4");
         System.out.println("Заполненный массив");
         for (int[] ints : square) {
@@ -63,8 +65,9 @@ public class homework2 {
 
         // Задание #6
         System.out.println("Задание #6");
-        int[] arr5 = {3, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // этот массив вернет true
+        //int[] arr5 = {3, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // этот массив вернет true
         //int[] arr5 = {1, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // этот вернет false
+        int[] arr5 = {3,1,1,1,1,1};
         System.out.println(checkBalance(arr5));
         System.out.println();
 
